@@ -2,11 +2,12 @@ from os import EX_CANTCREAT
 import unittest
 
 
+#This block of code captures the "message" attribute from the existing json file and checks that other files follow the same schema
 class TestMyFunctions(unittest.TestCase):
     def test_read_file_data(self):
         import json
         f = open('data/data_1.json')
-        # this gives json object as a dictionary
+        # This line converts json objects to a dictionary
         dict = json.load(f)
 
         req = {

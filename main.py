@@ -3,27 +3,17 @@ from stat import filemode
 
 class work:
     f = open('data/data_2.json')
-    # this gives json object as a dictionary
+    # This line converts the json objects to a dictionary
     dict = json.load(f)
 
-    # this converts dictionary to string
-    str = json.dumps(dict)
-    # this convverts json string to python
-    load = json.loads(str)
-
+    #This line creates a dictionary
     req = {
         "required": "false"
     }
+    #This line appends a dictionary to the existing dictionary to ensure the "required" tag is set to false 
     app = {**dict["message"], **req}
 
-    print(list(app.keys()))
-    # print(list(app.values()))
-    # with open('sample.json','w') as json_file:
-    #json.dump(app, json_file)
-    # print(app)
-
-
-    # print(str)
-    # print(load["message"])
-
+    with open('sample.json','w') as json_file:
+        json.dump(app, json_file)
+    
     f.close()
